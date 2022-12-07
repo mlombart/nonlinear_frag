@@ -63,6 +63,6 @@ plt.xlim(xmin,xmax)
 plt.ylim(yminloglog,ymaxloglog)
 plt.tight_layout()
 
-# plt.savefig(path_plot+'/abserrM1_kmul.png',**savefig_options)
+# plt.savefig(path_plot+'/abserrM1_kmul.png',dpi=192,**savefig_options)
 
 plt.show()

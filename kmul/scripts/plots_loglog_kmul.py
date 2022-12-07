@@ -102,9 +102,8 @@ ax.plot(xmeanlogk1,gtend_xmeanlog_k1,markeredgecolor='C3',label=r'$k=1$',**marke
 ax.plot(xmeanlogk2,gtend_xmeanlog_k2,markeredgecolor='C1',label=r'$k=2$',**marker_style)
 ax.plot(xmeanlogk3,gtend_xmeanlog_k3,markeredgecolor='C2',label=r'$k=3$',**marker_style)
 
-ax.axvline(1.,c='C4',linestyle='dashdot')
-
 #to show the position of the pieak of the curbe at t=0
+ax.axvline(1.,c='C4',linestyle='dashdot')
 ax.text(1.5, 10**(-7),r'$\tau=0$',rotation='vertical')
 
 #zoomin around the peak in lin-log scale
@@ -133,7 +132,7 @@ ax.set_title(r'$\tau=%d$' %(timek0[-1]))
 ax.legend(loc='lower left',ncol=1,fontsize=14)
 mark_inset(ax, axins2, loc1=2, loc2=4, fc="none", ec="0.5")
 
-# plt.savefig(path_plot+'/kmul_loglog.png',**savefig_options)
+# plt.savefig(path_plot+'/kmul_loglog.png',dpi=192,**savefig_options)
 
 
 plt.show()

@@ -46,7 +46,7 @@ EOCL1dis_k3 = np.loadtxt(path_data+'/kmax='+str(k3)+'/EOCL1dis_k3.txt')
 ###############################
 
 
-#figure for order of convergence
+#figure for order of convergence continuous L1 norm
 plt.figure(1)
 plt.loglog(EOCL1cont_k0[:,0],EOCL1cont_k0[:,1],'o',c='black',label=r'$k=0$')  
 plt.loglog(EOCL1cont_k1[:,0],EOCL1cont_k1[:,1],'o',c='C3',label=r'$k=1$')
@@ -70,7 +70,7 @@ plt.ylabel(r'$e_{\mathrm{c},N}$')
 plt.xlim(xmax=17)
 plt.legend(loc='lower left')
 plt.tight_layout()
-plt.savefig(path_plot+'/EOCL1cont_kmul.png',**savefig_options)
+# plt.savefig(path_plot+'/EOCL1cont_kmul.png',dpi=192,**savefig_options)
 
 plt.figure(2)
 plt.loglog(EOCL1dis_k0[:,0],EOCL1dis_k0[:,1],'o',c='black',label=r'$k=0$')  
@@ -95,6 +95,6 @@ plt.ylabel(r'$e_{\mathrm{d},N}$')
 plt.xlim(xmax=17)
 plt.legend(loc='lower left')
 plt.tight_layout()
-plt.savefig(path_plot+'/EOCL1dis_kmul.png',**savefig_options)
+# plt.savefig(path_plot+'/EOCL1dis_kmul.png',dpi=192,**savefig_options)
 
 plt.show()

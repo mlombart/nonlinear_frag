@@ -1,0 +1,9 @@
+Nbins = 20
+Kflux = 0
+dthydro =  0.001
+ndthydro =       2500
+nb Gauss points =  5
+Init massgrid and massbins in      0.000s.
+Tabflux generated in      0.002s
+Iteratefrag in      1.637s
+Elapsed Time:      1.640s

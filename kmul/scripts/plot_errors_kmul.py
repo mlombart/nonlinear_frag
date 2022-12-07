@@ -68,7 +68,7 @@ plt.xlim(xmin,xmax)
 plt.ylim(yminloglog,ymaxloglog)
 plt.tight_layout()
 
-# plt.savefig(path_plot+'/errL1_cont_kmul.png',**savefig_options)
+# plt.savefig(path_plot+'/errL1_cont_kmul.png',dpi=192,**savefig_options)
 
 #figure discrete erreur L1 norm 
 plt.figure(2)
@@ -82,6 +82,6 @@ plt.ylabel(r'numerical error $e_{d,N}$');
 plt.xlim(xmin,xmax)
 plt.ylim(yminloglog,ymaxloglog)
 plt.tight_layout()
-# plt.savefig(path_plot+'/errL1_dis_kmul.png',**savefig_options)
+# plt.savefig(path_plot+'/errL1_dis_kmul.png',dpi=192,**savefig_options)
 
 plt.show()

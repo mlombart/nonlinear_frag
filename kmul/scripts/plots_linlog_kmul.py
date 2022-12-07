@@ -85,7 +85,8 @@ massbinsk1 = np.loadtxt(path_data+'/kmax='+str(k1)+'/massbins.txt')
 
 gij_t0_k1 = np.genfromtxt(path_data+'/kmax='+str(k1)+'/gij_t0.txt')
 gij_tend_k1 = np.genfromtxt(path_data+'/kmax='+str(k1)+'/gij_tend.txt')
-theta_k1 = np.loadtxt(path_data+'/kmax='+str(k1)+'/theta.txt')
+theta_k1_t0 = np.loadtxt(path_data+'/kmax='+str(k1)+'/theta_t0.txt')
+theta_k1_tend = np.loadtxt(path_data+'/kmax='+str(k1)+'/theta_tend.txt')
 
 timek1 = np.loadtxt(path_data+'/kmax='+str(k1)+'/time.txt')
 
@@ -104,7 +105,8 @@ massbinsk2 = np.loadtxt(path_data+'/kmax='+str(k2)+'/massbins.txt')
 gij_t0_k2 = np.genfromtxt(path_data+'/kmax='+str(k2)+'/gij_t0.txt')
 gij_tend_k2 = np.genfromtxt(path_data+'/kmax='+str(k2)+'/gij_tend.txt')
 
-theta_k2 = np.loadtxt(path_data+'/kmax='+str(k2)+'/theta.txt')
+theta_k2_t0 = np.loadtxt(path_data+'/kmax='+str(k2)+'/theta_t0.txt')
+theta_k2_tend = np.loadtxt(path_data+'/kmax='+str(k2)+'/theta_tend.txt')
 
 timek2 = np.loadtxt(path_data+'/kmax='+str(k2)+'/time.txt')
 
@@ -122,7 +124,8 @@ massbinsk3 = np.loadtxt(path_data+'/kmax='+str(k3)+'/massbins.txt')
 gij_t0_k3 = np.genfromtxt(path_data+'/kmax='+str(k3)+'/gij_t0.txt')
 gij_tend_k3 = np.genfromtxt(path_data+'/kmax='+str(k3)+'/gij_tend.txt')
 
-theta_k3 = np.loadtxt(path_data+'/kmax='+str(k3)+'/theta.txt')
+theta_k3_t0 = np.loadtxt(path_data+'/kmax='+str(k3)+'/theta_t0.txt')
+theta_k3_tend = np.loadtxt(path_data+'/kmax='+str(k3)+'/theta_tend.txt')
 
 timek3 = np.loadtxt(path_data+'/kmax='+str(k3)+'/time.txt')
 
@@ -196,12 +199,12 @@ axes[3,1].semilogx(x,solkmulDL(x,timek3[-1]),'--',c='C0',label='Analytic')
 for j in range(nbins):
    axes[0,0].plot(I(massgridk0,j),gk0(gij_t0_k0,j,I(massgridk0,j)),c='black',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
    axes[0,1].plot(I(massgridk0,j),gk0(gij_tend_k0,j,I(massgridk0,j)),c='black',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
-   axes[1,0].plot(I(massgridk1,j),gtilde(massgridk1,massbinsk1,gij_t0_k1,theta_k1[0,:],k1,j,I(massgridk0,j)),c='C3',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
-   axes[1,1].plot(I(massgridk1,j),gtilde(massgridk1,massbinsk1,gij_tend_k1,theta_k1[-1,:],k1,j,I(massgridk1,j)),c='C3',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
-   axes[2,0].plot(I(massgridk2,j),gtilde(massgridk2,massbinsk2,gij_t0_k2,theta_k2[0,:],k2,j,I(massgridk2,j)),c='C1',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
-   axes[2,1].plot(I(massgridk2,j),gtilde(massgridk2,massbinsk2,gij_tend_k2,theta_k2[-1,:],k2,j,I(massgridk2,j)),c='C1',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
-   axes[3,0].plot(I(massgridk3,j),gtilde(massgridk3,massbinsk3,gij_t0_k3,theta_k3[0,:],k3,j,I(massgridk3,j)),c='C2',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
-   axes[3,1].plot(I(massgridk3,j),gtilde(massgridk3,massbinsk3,gij_tend_k3,theta_k3[-1,:],k3,j,I(massgridk3,j)),c='C2',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
+   axes[1,0].plot(I(massgridk1,j),gtilde(massgridk1,massbinsk1,gij_t0_k1,theta_k1_t0,k1,j,I(massgridk0,j)),c='C3',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
+   axes[1,1].plot(I(massgridk1,j),gtilde(massgridk1,massbinsk1,gij_tend_k1,theta_k1_tend,k1,j,I(massgridk1,j)),c='C3',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
+   axes[2,0].plot(I(massgridk2,j),gtilde(massgridk2,massbinsk2,gij_t0_k2,theta_k2_t0,k2,j,I(massgridk2,j)),c='C1',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
+   axes[2,1].plot(I(massgridk2,j),gtilde(massgridk2,massbinsk2,gij_tend_k2,theta_k2_tend,k2,j,I(massgridk2,j)),c='C1',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
+   axes[3,0].plot(I(massgridk3,j),gtilde(massgridk3,massbinsk3,gij_t0_k3,theta_k3_t0,k3,j,I(massgridk3,j)),c='C2',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
+   axes[3,1].plot(I(massgridk3,j),gtilde(massgridk3,massbinsk3,gij_tend_k3,theta_k3_tend,k3,j,I(massgridk3,j)),c='C2',label=(r'$p_j(x,\tau)$' if j==0 else '_'))
    
 
 axes[0,0].plot([], [], ' ', label=r'$k=0$')
@@ -229,7 +232,7 @@ for j in range(4):
 axes[3,0].set_xlabel(r'mass $x$')
 axes[3,1].set_xlabel(r'mass $x$')
 
-# plt.savefig(path_plot+'/kmul_linlog.png',**savefig_options)
+# plt.savefig(path_plot+'/kmul_linlog.png',dpi=192,**savefig_options)
 
 plt.show()
 
